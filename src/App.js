@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Pacientes from './components/Pacientes/Pacientes.jsx'
+import Medicos from './components/Medicos/Medicos.jsx'
 import './App.css';
+import NavClinica from './components/Navbar/NavClinica.jsx'
+import Menu from './components/Menu/Menu.jsx';
+import Turnos from './components/Turnos/Turnos.jsx';
+import Home from './components/Home/Home.jsx';
+import Footer from './components/Footer/Footer.jsx';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavClinica />
+      <Routes>
+        <Route path="/" element={<Menu />} />
+        <Route path="/pacientes" element={<Pacientes />} />
+        <Route path="/medicos" element={<Medicos />} />
+        <Route path="/turnos" element={<Turnos />} />
+      </Routes>
+      <Home />
+      <Footer />
+    </BrowserRouter>
   );
 }
 
