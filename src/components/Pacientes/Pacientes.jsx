@@ -13,6 +13,7 @@ import { DeleteIcon } from "./DeleteIcon";
 import axios from "axios";
 import ModalWindowPac from "../ModalPacientes/ModalWindowPac";
 import ModalEditPac from "../ModalEditPacientes/ModalEditPac"
+import Banner from '../Banner/Banner'
 
 const columns = [
   { name: "ID", uid: "id" },
@@ -126,6 +127,7 @@ export default function Pacientes() {
       </Table>
       <ModalWindowPac 
       cargarPacientes={cargarPacientes}/>
+      <Banner />
     </>
   );
 }

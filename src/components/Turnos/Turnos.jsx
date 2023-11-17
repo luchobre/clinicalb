@@ -12,6 +12,7 @@ import { DeleteIcon } from "../Pacientes/DeleteIcon";
 import axios from "axios";
 import ModalWindowTurnos from "../ModalTurnos/ModalWindowTurnos";
 import ModalEditTurnos from "../ModalEditTurnos/ModalEditTurnos";
+import Banner from "../Banner/Banner";
 
 const columns = [
   { name: "ID", uid: "id" },
@@ -114,6 +115,7 @@ export default function Turnos() {
         </TableBody>
       </Table>
       <ModalWindowTurnos cargarTurnos={cargarTurnos} />
+      <Banner />
     </>
   );
 }

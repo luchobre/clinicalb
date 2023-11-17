@@ -5,7 +5,6 @@ import './App.css';
 import NavClinica from './components/Navbar/NavClinica.jsx'
 import Menu from './components/Menu/Menu.jsx';
 import Turnos from './components/Turnos/Turnos.jsx';
-import Home from './components/Home/Home.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
 
@@ -19,7 +18,6 @@ function App() {
         <Route path="/medicos" element={<Medicos />} />
         <Route path="/turnos" element={<Turnos />} />
       </Routes>
-      <Home />
       <Footer />
     </BrowserRouter>
   );

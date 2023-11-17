@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay'
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Home from "../Home/Home";
 
 export default function Menu() {
   return (
@@ -39,6 +40,7 @@ export default function Menu() {
           <img src={img4} alt="img4"/>
         </SwiperSlide>
       </Swiper>
+      <Home />
     </>
   );
 }

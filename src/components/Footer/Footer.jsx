@@ -1,9 +1,11 @@
 import React from 'react';
 import { Typography } from "@material-tailwind/react";
 import logo from '../../assets/images/logo.png'
+import './Footer.css'
 
 const Footer = () => {
   return (
+    <div className='container-footer'>
     <footer className="bg-gray-200 py-4">
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
@@ -40,6 +42,7 @@ const Footer = () => {
         </Typography>
       </div>
     </footer>
+    </div>
   );
 };
 

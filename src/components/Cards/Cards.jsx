@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardFooter, Image, Button } from "@nextui-org/react";
+import { Card, CardFooter, Image } from "@nextui-org/react";
 import "./Cards.css";
 
 export default function Cards({ urlImage, text }) {
@@ -12,17 +12,8 @@ export default function Cards({ urlImage, text }) {
         src={urlImage}
         width={600}
       />
-      <CardFooter className="before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute rounded-large right-3 bottom-0 w-[calc(100%_-_8px)] shadow-small ml-1 z-10" >
+      <CardFooter className="before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute rounded-large right-1 bottom-0 w-[calc(100%_-_8px)] shadow-small ml-1 z-10" >
         <p className="text-xl text-white/80">{text}</p>
-        <Button
-          className="text-xl bg-black/20"
-          variant="flat"
-          color="default"
-          radius="lg"
-          size="lg"
-        >
-          Ir
-        </Button>
       </CardFooter>
     </Card>
   );

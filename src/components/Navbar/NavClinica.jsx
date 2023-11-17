@@ -14,17 +14,18 @@ import {
 import { NavbarLogo } from "./NavbarLogo.jsx";
 import { SearchIcon } from "./SearchIcon.jsx";
 import { Link } from "react-router-dom";
+import profilePic from "../../assets/images/avatar.png"
 
 export default function App() {
   return (
-    <Navbar isBordered>
+    <Navbar >
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
           <Link to="/">
             <NavbarLogo />
           </Link>
         </NavbarBrand>
-        <NavbarContent className=" sm:flex gap-3">
+        <NavbarContent className=" sm:flex gap-4">
           <NavbarItem>
             <Link color="foreground" to="pacientes">
               Pacientes
@@ -63,16 +64,15 @@ export default function App() {
               isBordered
               as="button"
               className="transition-transform"
-              color="secondary"
               name="Jason Hughes"
               size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              src={profilePic}
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
+              <p className="font-semibold">clinicalb@example.com</p>
             </DropdownItem>
             <DropdownItem key="settings">My Settings</DropdownItem>
             <DropdownItem key="team_settings">Team Settings</DropdownItem>
