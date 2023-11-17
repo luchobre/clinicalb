@@ -14,6 +14,7 @@ import axios from "axios";
 import ModalWindow from "../ModalMedicos/ModalWindow";
 import ModalEditMed from "../ModalEditMedicos/ModalEditMed";
 import Banner from "../Banner/Banner";
+import ModalDelete from "../ModalDelete/ModalDelete"
 
 const columns = [
   { name: "ID", uid: "id" },
@@ -34,6 +35,7 @@ const columns = [
 
 export default function Medicos() {
   const [medicos, setMedicos] = useState([]);
+  const [modalError, setModalError] = useState(false);
 
   const cargarMedicos = () => {
     axios
@@ -50,7 +52,9 @@ export default function Medicos() {
     cargarMedicos();
   }, []);
 
- 
+  const handleModalError = () => {
+    setModalError(false)
+  }
 
   const renderCell = React.useCallback((medico, columnKey) => {
     const cellValue = medico[columnKey];
@@ -63,6 +67,7 @@ export default function Medicos() {
         })
       .catch ((error, response) => {
         console.log("Error al eliminar el médico", error ,response);
+        setModalError(true)
       })
     };
 
@@ -132,6 +137,9 @@ export default function Medicos() {
         </TableBody>
       </Table>
       <ModalWindow cargarMedicos={cargarMedicos} />
+      <ModalDelete 
+      showModal = {modalError}
+      handleModalError = {handleModalError}/>
       <Banner />
     </>
   );
