@@ -36,7 +36,7 @@ export default function ModalWindow( {cargarMedicos} ) {
 const addMedico = (e) => {
   e.preventDefault();
   axios
-  .post("http://localhost:3001/medicos", formData)
+  .post("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/medicos", formData)
   .then((response) => {
     console.log(response);
     cargarMedicos();

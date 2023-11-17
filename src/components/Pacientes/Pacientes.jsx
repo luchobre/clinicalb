@@ -33,7 +33,7 @@ export default function Pacientes() {
 
   const cargarPacientes = () => {
     axios
-    .get("http://localhost:3001/pacientes")
+    .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes")
     .then((response) => {
       setPacientes(response.data);
     })
@@ -51,7 +51,7 @@ export default function Pacientes() {
     const cellValue = paciente[columnKey];
 
     const deletePaciente = (id) => {
-        axios.delete(`http://localhost:3001/pacientes/${id}`)
+        axios.delete(`https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes/${id}`)
         .then((response) => {
           console.log(`El paciente con el id ${id} fue eliminado exitosamente`)
           cargarPacientes();

@@ -30,7 +30,7 @@ export default function ModalWindowTurnos({ cargarTurnos }) {
   useEffect(() => {
     // Cargar la lista de pacientes
     axios
-      .get("http://localhost:3001/pacientes")
+      .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes")
       .then((response) => {
         setPacientes(response.data);
       })
@@ -40,7 +40,7 @@ export default function ModalWindowTurnos({ cargarTurnos }) {
 
     // Cargar la lista de medicos
     axios
-      .get("http://localhost:3001/medicos")
+      .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/medicos")
       .then((response) => {
         setMedicos(response.data);
       })
@@ -51,7 +51,7 @@ export default function ModalWindowTurnos({ cargarTurnos }) {
 
   const addTurno = () => {
     axios
-      .post("http://localhost:3001/turnos", formData)
+      .post("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/turnos", formData)
       .then((response) => {
         console.log(response);
         cargarTurnos();

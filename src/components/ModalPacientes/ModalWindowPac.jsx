@@ -23,7 +23,7 @@ export default function ModalWindowPac( {cargarPacientes} ) {
 
   const addPatient = () => {
     axios
-      .post("http://localhost:3001/pacientes", formData )
+      .post("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes", formData )
       .then((response) => {
         console.log(response)
         cargarPacientes()

@@ -29,7 +29,7 @@ export default function Turnos() {
 
   const cargarTurnos = () => {
     axios
-      .get("http://localhost:3001/turnos")
+      .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/turnos")
       .then((response) => {
         setTurnos(response.data);
       })
@@ -47,7 +47,7 @@ export default function Turnos() {
 
     const deleteTurno = (id) => {
       try {
-        axios.delete(`http://localhost:3001/turnos/${id}`);
+        axios.delete(`https://apiclinicalb-dev-zspj.4.us-1.fl0.io/turnos/${id}`);
         console.log(`El turno con el id ${id} fue eliminado exitosamente`);
         cargarTurnos();
       } catch (error) {

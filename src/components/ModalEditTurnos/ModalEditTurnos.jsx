@@ -28,7 +28,7 @@ export default function ModalEditTurnos({ listaDeTurnos, cargarTurnos}) {
 
  useEffect(() => {
     axios
-      .get("http://localhost:3001/pacientes")
+      .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes")
       .then((response) => {
         setPacientes(response.data);
       })
@@ -38,7 +38,7 @@ export default function ModalEditTurnos({ listaDeTurnos, cargarTurnos}) {
 
 
     axios
-      .get("http://localhost:3001/medicos")
+      .get("https://apiclinicalb-dev-zspj.4.us-1.fl0.io/medicos")
       .then((response) => {
         setMedicos(response.data);
       })
@@ -50,7 +50,7 @@ export default function ModalEditTurnos({ listaDeTurnos, cargarTurnos}) {
 
   const addTurno = () => {
     axios
-      .put(`http://localhost:3001/turnos/${listaDeTurnos.id}`, formData)
+      .put(`https://apiclinicalb-dev-zspj.4.us-1.fl0.io/turnos/${listaDeTurnos.id}`, formData)
       .then((response) => {
         console.log(response);
         cargarTurnos();

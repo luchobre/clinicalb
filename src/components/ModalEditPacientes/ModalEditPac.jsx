@@ -31,7 +31,7 @@ export default function ModalEditPac({ listaDePacientes, cargarPacientes }) {
 
   const addPatient = () => {
     axios
-      .put(`http://localhost:3001/pacientes/${listaDePacientes.id}`, formData)
+      .put(`https://apiclinicalb-dev-zspj.4.us-1.fl0.io/pacientes/${listaDePacientes.id}`, formData)
       .then((response) => {
         console.log(response);
         cargarPacientes();

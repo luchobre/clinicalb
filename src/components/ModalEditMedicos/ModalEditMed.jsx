@@ -37,7 +37,7 @@ export default function ModalEditMed( {listaDeMedicos, cargarMedicos} ) {
 const addMedico = (e) => {
   e.preventDefault();
   axios
-  .put(`http://localhost:3001/medicos/${listaDeMedicos.id}`, formData)
+  .put(`https://apiclinicalb-dev-zspj.4.us-1.fl0.io/medicos/${listaDeMedicos.id}`, formData)
   .then((response) => {
     console.log(response);
     cargarMedicos();
