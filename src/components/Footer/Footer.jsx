@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from "@material-tailwind/react";
 import logo from '../../assets/images/logo.png'
 import './Footer.css'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,7 +10,9 @@ const Footer = () => {
     <footer className="bg-gray-200 py-4">
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
+          <Link to="/">
           <img src={logo} alt="Logo" className="h-12 ml-2"/>
+          </Link>
         </div>
         <div className="flex items-center mr-2">
           <Typography
