@@ -14,6 +14,7 @@ import axios from "axios";
 import ModalWindowPac from "../ModalPacientes/ModalWindowPac";
 import ModalEditPac from "../ModalEditPacientes/ModalEditPac"
 import Banner from '../Banner/Banner'
+import ModalDelete from "../ModalDelete/ModalDelete"
 
 const columns = [
   { name: "ID", uid: "id" },
