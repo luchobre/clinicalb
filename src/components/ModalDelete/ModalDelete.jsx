@@ -1,12 +1,24 @@
 import React from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
-export default function ModalDelete(handleModalError) {
-  const {isOpen, onClose} = useDisclosure();
+export default function App({showModal, handleModalError}) {
+  const {isOpen, onOpen, onClose} = useDisclosure();
+  // const [backdrop, setBackdrop] = React.useState('blur')
+
+  React.useEffect(() => {
+    if (showModal) {
+      onOpen();
+    }
+  }, [showModal, onOpen]);  
+
+  // const handleOpen = (backdrop) => {
+  //   setBackdrop(backdrop)
+  //   onOpen();
+  // }
 
   return (
     <>
-      <Modal backdrop={'blur'} isOpen={isOpen} onClose={onClose}>
+      <Modal backdrop={'blur'} isOpen={isOpen}  onClose={() => { onClose(); handleModalError(); }}>
         <ModalContent>
           {(onClose) => (
             <>
@@ -31,11 +43,8 @@ export default function ModalDelete(handleModalError) {
                 </p>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onClick={handleModalError}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Cerrar
                 </Button>
               </ModalFooter>
             </>
