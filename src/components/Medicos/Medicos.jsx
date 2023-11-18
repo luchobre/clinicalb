@@ -66,7 +66,7 @@ export default function Medicos() {
           cargarMedicos();
         })
       .catch ((error, response) => {
-        console.log(`Error al eliminar el médico con el id ${id}`, error ,response);
+        console.log("Error al eliminar el médico. ", error ,response);
         setModalError(true)
       })
     };
