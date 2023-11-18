@@ -30,6 +30,7 @@ const columns = [
 
 export default function Pacientes() {
   const [pacientes, setPacientes] = useState([]);
+  const [modalError, setModalError] = useState(false);
 
 
   const cargarPacientes = () => {
@@ -47,6 +48,9 @@ export default function Pacientes() {
     cargarPacientes();
   }, []);
 
+  const handleModalError = () => {
+    setModalError(false)
+  }
 
   const renderCell = React.useCallback((paciente, columnKey) => {
     const cellValue = paciente[columnKey];
@@ -58,7 +62,8 @@ export default function Pacientes() {
           cargarPacientes();
         })
       .catch ((error)=> {
-        console.log('Error al eliminar el paciente', error);
+        console.log(`Error al eliminar el paciente con el id ${id}`, error);
+        setModalError(true)
       })
     }
 
@@ -127,6 +132,9 @@ export default function Pacientes() {
       </Table>
       <ModalWindowPac 
       cargarPacientes={cargarPacientes}/>
+      <ModalDelete 
+      showModal = {modalError}
+      handleModalError = {handleModalError}/>
       <Banner />
     </>
   );
